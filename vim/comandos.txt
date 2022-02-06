@@ -1,0 +1,34 @@
+:q es para salir
+:q! es para forzar salir, por si quieres salir sin guardar
+:w es para guardar
+
+MODOS DE VIM:
+Vim tiene distintos modos que son como 'capas', segun a la tecla que le demos, accederemos a un modo u otro
+por ejemplo con shift se accede a una capa de funciones, con altGR a otra capa, no pulsar nada, otra capa...
+-Modo normal: Es el que tienes al entrar a vim, el que se usa para mover el cursor.
+-Modo Insert: Para editar. Se accede de varias maneras, mirar seccion 'INSERTAR TEXT Y AGREGARLO AL FINAL'
+
+MOVER EL CURSOR
+Con las letras de la mano derecha nos movemos...
+	h:izquierda
+	j:abajo
+	k:arriba
+	l:derecha
+
+	w: salta hacia ADELANTE de palabra a palabra, salta al INICIO de la siguiente palabra
+	e: salta al final de la palabra actual. Presionar varias veces salta a la ultima posicion
+		de la ultima letra de la palabra actual
+	b: salta hacia ATRAS de palabra en palabra, salta al INICIO de la palabra anterior
+
+INSERTAR TEXTO Y AGREGARLO AL FINAL
+	-Pulsando 'i' en el modo normal, deja el cursor tal y donde está.
+	-Pulsando 'a' en el modo normal, avanza el cursor a la posicion siguiente  y despues se puede editar.
+	-Pulsando 'A' en el modo normal, insertas al FINAL DE LA LINEA. MUY UTIL
+	-Doble ESC para volver al normal, se pulsa dos veces rapidamente porque pulsarlo una unica vez puede que 
+	aun no haya cambiado al modo normal, ya que tiene un cierto delay.
+
+ELIMINAR TEXTO
+	-
+
+
+
