@@ -1,6 +1,7 @@
 :q es para salir
 :q! es para forzar salir, por si quieres salir sin guardar
 :w es para guardar
+:wq es para guardar y salir
 
 MODOS DE VIM:
 Vim tiene distintos modos que son como 'capas', segun a la tecla que le demos, accederemos a un modo u otro
@@ -28,7 +29,16 @@ INSERTAR TEXTO Y AGREGARLO AL FINAL
 	aun no haya cambiado al modo normal, ya que tiene un cierto delay.
 
 ELIMINAR TEXTO
-	-
+	-Situar el cursor i pulsar 'x' estando en el modo normal para borrar.
 
+MOVERSE ENTRE ARCHIVOS (Se puede probar con index.js, que redirige a helper.js)
+	-Mover se a funciones con 'gd'. Imaginemos que llamamos a ayuda() en una 	linea, pues con gd me lleva a la linea donde esta definida la funcion 		ayuda()
+	-Saltar a otro archivo 'gf en modo normal': Situarse en un sitio que 
+	tenga una ruta a otro archivo, porejm './helper.js' y ahi se le da a 
+	'gf', automaticamente abrira el otro archivo
+	
+	-Existe un buffer con los movimientos de donde venimos y donde vamos:
+		-Se puede volver al paso anterior con 'Ctrl+o' 
+		-Se puede regresar al siguiente (despues de volver) con 'Ctrl+i'
 
-
+COMANDOS PARA ELIMINAR, DESHACER Y REHACER
