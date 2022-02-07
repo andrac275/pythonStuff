@@ -11,11 +11,10 @@ por ejemplo con shift se accede a una capa de funciones, con altGR a otra capa, 
 
 MOVER EL CURSOR
 Con las letras de la mano derecha nos movemos...
-	h:izquierda
-	j:abajo
-	k:arriba
-	l:derecha
-
+		k:arriba
+	h:izquierda	l:derecha
+		j:abajo
+	
 	w: salta hacia ADELANTE de palabra a palabra, salta al INICIO de la siguiente palabra
 	e: salta al final de la palabra actual. Presionar varias veces salta a la ultima posicion
 		de la ultima letra de la palabra actual
@@ -32,7 +31,8 @@ ELIMINAR TEXTO
 	-Situar el cursor i pulsar 'x' estando en el modo normal para borrar.
 
 MOVERSE ENTRE ARCHIVOS (Se puede probar con index.js, que redirige a helper.js)
-	-Mover se a funciones con 'gd'. Imaginemos que llamamos a ayuda() en una 	linea, pues con gd me lleva a la linea donde esta definida la funcion 		ayuda()
+	-Mover se a funciones con 'gd'. Imaginemos que llamamos a ayuda() en una
+ 	linea, pues con gd me lleva a la linea donde esta definida la funcion ayuda()
 	-Saltar a otro archivo 'gf en modo normal': Situarse en un sitio que 
 	tenga una ruta a otro archivo, porejm './helper.js' y ahi se le da a 
 	'gf', automaticamente abrira el otro archivo
@@ -42,3 +42,24 @@ MOVERSE ENTRE ARCHIVOS (Se puede probar con index.js, que redirige a helper.js)
 		-Se puede regresar al siguiente (despues de volver) con 'Ctrl+i'
 
 COMANDOS PARA ELIMINAR, DESHACER Y REHACER
+	-Eliminar palabra: En modo normal 'dw' para borrar palabra a palabra donde este el cursor.	
+	-Eliminar palabra hacia atras: En modo normal 'db' borra palabra anterior
+	-Eliminar linea entera: En modo normal con cursor en el inicio: 'd$' <- Simbolo del dolar Shift+4
+	-Deshacer: en modo normal, presionar 'u'.
+	-Rehacer: en modo normal, presionar 'Ctrl + r'
+
+OPERADORES + MOVIMIENTOS (operadores 'e' 'w' i 'b')
+	-Borrar varias palabras a la vez. 'dXw'. Siendo X un numero. PEj. 'd3w' borra tres palabras. 
+	-Borrar palabras a la vez hacia atrás. 'dXb'. d2b borra dos palabras atrás.
+	-Mover ADELANTE palabras. Xw. PEj. 4w mueve hacia adelante 4 palabras.
+	-Mover ATRAS palabras. Xb. PEj. 3b mueve hacia atrás 3 palabras.
+	Hola esto es una frase de prueba
+
+ELIMINAR LINEA, PEGAR Y REORDENAR LISTA
+
+	
+
+
+
+
+
