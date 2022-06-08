@@ -12,6 +12,7 @@ print(x,y)
 email = 'andraquito@lalala.com'
 print(email)
 
+#Distintas maneras de declarar variables.
 _mi_var ='chanchito'
 mi_var ='chanchito'
 miVar ='chanchito'
@@ -32,20 +33,5 @@ print(valor1,valor2,valor3)
 inicio = 'hola'
 final = 'mundo'
 print(inicio + final)
-
-#TIPOS DE DATOS
-#String
-palabra = 'hola mundo'
-oracion = "hola mundo comilla doble"
-
-#Entero
-entero = 20
-#Float
-conDecimales = 20.2
-#Numeros complejos. Se usan muy poco en el curso. Se
-#crean agregando la j
-complejo = 1j
-
-print(palabra,oracion,entero,conDecimales,complejo)
-
-#Listas (o arrays)
+#imprimir las variables con comas lo que hace es que se añada un espacio entre cada una
+print(inicio,final)
