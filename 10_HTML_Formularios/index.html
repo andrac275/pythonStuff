@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Pagina con formularios</title>
+  </head>
+  <body>
+    <form>
+        <!--number: solo recibe numeros, tiene las flechitas de arriba y abajo y acepta la 'e' por el numero e
+        password: pone asteriscos en el formulario.
+        text: Es el valor por defecto. Ponerlo y no ponerlo es lo mismo, es para poner texto
+        submit: Es un boton que pone 'Enviar Consulta'-->
+
+        <!--El placeholder es informacion en el input que se sustituye cuando se escribe-->
+        <label>Edad:</label>
+        <input type="number" placeholder="Ingresa edad..."/>
+        <br/>
+        <label>Contrasenya:</label>
+        <input type="password" placeholder="Tu password"/>
+        <br/>
+        <label>Nombre:</label>
+        <input type="text" placeholder="Tu nombre..."/>
+        <input type="submit" value="NombreBoton"/>
+        <br/>
+        <!--Text area es un cuadro redimensionable que recibe texto.-->
+        <textarea></textarea>
+        <!--Button es un boton. Es parecito al input type submit de arriba-->
+        <button>Esto es un boton</button>
+        <!--Esto es un combobox con distintas selecciones en el mismo.
+        Lo que se vera en el formulario es lalala, lelele y lilili, PERO
+        al usar JS o node, lo que se envia al servidor sera lo que hay en 
+        value: opcion1, opcion2,opcion3-->
+        <select>
+          <option value="opcion1">Lalala</option>
+          <option value="opcion2">Lelele</option>
+          <option value="opcion3">Lilili</option>
+        </select>
+
+        <br/>
+
+        <!--Fieldset es para agrupar cosas, hace una especie de cuadrado
+        legend: le da nombre a dicho cuadrado-->
+        <fieldset>
+          <legend>Información de fursona:</legend>
+          <label>Nombre de tu sona:</label> <input type="text" placeholder="NombreSona"/>
+          <br/>
+          <label>Edad:</label> <input type:"number" placeholder="Edad de la sona"/>
+          <br/>
+          <label>Raza:</label>
+          <select>
+            <option value="dragon">Dragon</option>
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+          </select>
+          <br/>
+          <button>Enviar datos</button>
+        </fieldset>
+
+    </form>
+  </body>
+</html>
