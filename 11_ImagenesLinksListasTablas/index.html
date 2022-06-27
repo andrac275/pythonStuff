@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Imagenes, links, listas y tablas</title>
+  </head>
+  <body>
+    <!--img: para poner una imagen
+        src: tiene la url de la imagen
+        width: ancho en pixeles de la imagen
+        height: alto en pixeles de la imagen
+            NOTA: no poner width o height deja la imagen con el tamaño base.-->
+    <img src="https://d.furaffinity.net/art/andraquito/1655408760/1655408722.andraquito_106b_16-06-2022-prideandrac.png" width="500" height="500"/>
+    <br/>
+    <br/>
+    <!--Links...-->
+    <label>Esto es un link: </label><a href="https://www.google.es">Ir a google</a>
+    <br/>
+    <!--Listas no ordenadas y ordenadas:
+        ul: Para listas no ordenadas
+        ol: para listas ordenadas
+        li: son los elementos de la lista-->
+    <fieldset>
+      <legend>Lista no ordenada</legend>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>Lista ordenada</legend>
+      <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+      </ol>      
+    </fieldset>
+
+    <!--Tablas:
+        thead: es la cabecera
+            tr: filas que tiene la cabecera
+            th: Contenido de las celdas <--Aqui es th
+        tbody: es el cuerpo de la tabla
+            tr: filas que tiene la cabecera
+            td: Contenido de las celdas <-- Ojo que aqui es td, no th como la cabecera
+        tfoot: es el pie de la tabla.
+        
+        -->
+    <fieldset>
+        <legend>Tablas:</legend>
+        <table>
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Ahorros</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Enero</td>
+              <td>1000e</td>
+            </tr>
+            <tr>
+                <td>Febrero</td>
+                <td>500e</td>
+              </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td>Suma total:</td>
+              <td>1500e</td>
+            </tr>
+          </tfoot>
+
+        </table>     
+      </fieldset>
+</body>
+</html>
