@@ -1,0 +1,18 @@
+/*Esto es un comentario*/
+body {
+    background-color: #efefef;
+}
+
+/*Esto con el hashtag parrafo es el 'id' que se ha dado en html
+El 'id' es para un UNICO ELEMENTO, no pueden haber multiples
+elementos con el mismo id, para eso esta la class, explicada debajo*/
+#parrafo{
+    color: #ff0000;
+}
+
+/*Con el punto (en lugar del #) es para las class, mirar el index.html
+La class es para distintos elementos. De normal se usaran class y pocas
+veces se usara el 'id'*/
+.etiqueta{
+    color: #00aa00
+}

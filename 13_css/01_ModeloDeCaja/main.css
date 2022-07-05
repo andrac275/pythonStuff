@@ -1,0 +1,25 @@
+body {
+    background-color: #efefef;
+}
+
+.caja {
+    margin: 8px; /*borde invisible que bordea el contenido POR FUERA del div*/
+    padding: 8px; /*borde invisible que bordea el contenido POR DENTRO del div*/
+    border-style: solid;  /*solid es una linea solida en el borde, por defecto es negro*/
+    /*Tipos de borde: solid, dashed,dotted,double,groove,ridge,inset,outset,hidden
+    Se pueden poner varios:border-style: dotted dashed solid double*/
+    border-width: 8px;
+    border-color: #faa;
+
+    /*Asignar a borde en concreto...*/
+    border-left: 6px dashed #afa;   /*grosor, tipo, color*/
+    /*border-top, border-bottom, border-right, para los otros*/
+
+    border-radius: 8px; /*para redondear bordes*/
+
+    height: 100px;/*Dar altura al div*/
+    width: 100px;/*Dar anchura al div*/
+
+    color:#575; /*Cambiar color del texto que estemos modificando*/
+    background-color: #aaf;
+}
