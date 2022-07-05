@@ -1,0 +1,16 @@
+body {
+    background-color: #eee;
+}
+
+a{
+    /*TextDecor es para subraya por arriba y abajo, tachar,*/
+    text-decoration: line-through; /*Esto tacha la palabra*/
+
+    /*Todo a mayus, todo a minus, capitalize es la primera mayus*/
+    text-transform: uppercase; /*Transforma todo a mayus*/
+
+    /*Para añadir espacio entre letras*/
+    letter-spacing: 3px;
+
+    
+}

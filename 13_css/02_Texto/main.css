@@ -1,25 +1,63 @@
 body {
-    background-color: #efefef;
+    background-color: #eee;
 }
 
-.caja {
-    margin: 8px; /*borde invisible que bordea el contenido POR FUERA del div*/
-    padding: 8px; /*borde invisible que bordea el contenido POR DENTRO del div*/
-    border-style: solid;  /*solid es una linea solida en el borde, por defecto es negro*/
-    /*Tipos de borde: solid, dashed,dotted,double,groove,ridge,inset,outset,hidden
-    Se pueden poner varios:border-style: dotted dashed solid double*/
-    border-width: 8px;
-    border-color: #faa;
+p{
+    /*Tipo de letra*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
-    /*Asignar a borde en concreto...*/
-    border-left: 6px dashed #afa;   /*grosor, tipo, color*/
-    /*border-top, border-bottom, border-right, para los otros*/
+    /*Cursiva, negrita...*/
+    font-style: italic;
 
-    border-radius: 8px; /*para redondear bordes*/
+    /*Tamaño*/
+    /* font-size: 20px; */
+    /*o tambien...*/
+    font-size: 1.5em; /*Los em son para sacar proporcionalidad, asi te aseguras un poco de compatibilidad*/
 
-    height: 100px;/*Dar altura al div*/
-    width: 100px;/*Dar anchura al div*/
+    /*'Peso' Es para que se vea mas delgado o gruesa una fuelte. Se le ponen valores de 
+    100 a 900 (en multiplos de 100) y no todas las fuentes aceptan todos los multiplos de 100*/
+    font-weight: 700;
 
-    color:#575; /*Cambiar color del texto que estemos modificando*/
-    background-color: #aaf;
+    /*Color*/
+    color:#222fff; 
+    /* color: blue; */ /*Alternativa, usar el nombre*/
+    
+    /*Con el align se puede left, center, right, justify...*/
+    text-align: justify;
+
+    /*Para subrayar arriba o abajo, tachar... Es mas interesante ponerlo directamente en html con la etiqueta
+    correspondiente.*/
+    text-decoration: underline;
+
+    /*Desplaza la primera linea un numero de pixeles, es para identar*/
+    text-indent: 40px;
+
+    /*Añade una separacion en pixeles entre las distintas lineas
+    es el INTERLINEADO*/
+    line-height: 1.7;
+
+    /*Añade un espacio entre cada una de las palabras que tengamos*/
+    word-spacing: 10px;
+
+    /*Esto añade una especie de texto desplazado*/
+    /*Sintaxis: DesplazamientoDerecha DesplazamientoAbajo Emborronado Color*/
+    /*El emborronado puede no ponerse y poner DespDerecha DespAbajo Color*/
+    /* text-shadow: 10px 2px 2px #ff0000; */
+    
+    /*Otra sintaxis...*/
+    /*rgba(red,green,blue,opacidad)*/
+    text-shadow: 10px 2px 2px rgba(0,0,0,0.3);
+}
+
+a{
+    /*TextDecor es para subraya por arriba y abajo, tachar,*/
+    text-decoration: line-through; /*Esto tacha la palabra*/
+
+    /*Todo a mayus, todo a minus, capitalize es la primera mayus*/
+    text-transform: uppercase; /*Transforma todo a mayus*/
+
+    /*Para añadir espacio entre letras*/
+    letter-spacing: 3px;
+
+    
 }
