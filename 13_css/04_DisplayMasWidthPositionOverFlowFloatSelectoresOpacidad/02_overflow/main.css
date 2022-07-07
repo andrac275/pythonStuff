@@ -1,0 +1,25 @@
+body {
+    background-color: #eee;
+}
+
+#over{
+    width: 100px;
+    height: 100px;
+    /*el texto del html esta limitado a un cuadrado de 100x100, hay texto que queda fuera de
+    este cuadrado y lo que pasa o deja de pasar se puede controlar con el
+    overflow. el overflow permite ponerle...
+        -visible: se ve lo que sobresale del cuadrado, aunque invada el resto de la pagina web.
+            si lo pones en visible veras a que me refiero
+        -hidden: lo que queda fuera del 100x100 se corta. NO permite scroll, cortado y punto
+        -scroll: permite hacer scroll, respetando el 100x100
+        -auto: agrega las barras de scroll si hacen falta automaticamente
+        
+    Variante... Se puede obligar al eje x (el horizontal) o al eje y (vertical) a tener ciertas
+    propiedades de las anteriores, de modo que...
+    overflow-x: propiedadAnterior;
+    overflow-y: propiedadAnterior;
+
+    Lo anterior asigna propiedades a la x o la y.
+        */
+    overflow: scroll;
+}

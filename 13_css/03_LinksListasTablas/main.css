@@ -2,15 +2,105 @@ body {
     background-color: #eee;
 }
 
+/*LINKS!!!! (mas abajo listas y tablas)*/
+
+/*Esto es para el estado general, si no ESPECIFICAMOS con link
+visited, hover y active será la 'a'*/
 a{
-    /*TextDecor es para subraya por arriba y abajo, tachar,*/
-    text-decoration: line-through; /*Esto tacha la palabra*/
+    color: hotpink
 
-    /*Todo a mayus, todo a minus, capitalize es la primera mayus*/
-    text-transform: uppercase; /*Transforma todo a mayus*/
+}
 
-    /*Para añadir espacio entre letras*/
-    letter-spacing: 3px;
+/*ESTADOS ESPECIFICOS del link*/
 
+/*link es para cuando no ha sido visitado. El link será rojo
+si no se ha visitado en éste ejemplo*/
+a:link{
+    color:hotpink;    
+    text-decoration: none; /*Quita el subrayado*/
+    background-color: #f00;
+    border: solid 1px #d00;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 4px;
+}
+
+/*Para cuando un link ya se ha visitado*/
+a:visited{
+    color:white;
+}
+
+/*hover para cuando se coloca el mouse encima*/
+a:hover{
+    color:blue;
+    /*text-decoration: underline;*/ /*añade subrayado al pasar el raton por encima*/
+    background-color: #f55;
+}
+
+/*active para cuando le damos click. Si se le da click izquierdo
+y se mantiene, se verá de color negro.
+IMPORTANTE: poner active despues de hover, sino el hover eclipsa la funcionalidad
+del active*/
+a:active{
+    color:black;
+}
+
+/*------------------------------------------------------------*/
+
+/*LISTAS!!!!!*/
+
+/* ul li es para seleccionar todos los li dentro de ul
+ul li{
+    /*list-style-type
+        none: quita todo. Ni circulos ni nada
+        cicle: circulo blanco
+        square: cuadrado relleno de negro
+        upper-roman: numeros romanos
+        lower-alpha: letras abcedario en minuscula
     
+    
+    list-style-type: upper-roman;    
+} */
+
+ul{
+    list-style-type: none; /*quita los elementos de la lista*/
+    background-color: #fff;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    padding-left: 0px;
+}
+
+li{
+    border-bottom: solid 1px #ddd;
+    padding: 15px;
+}
+
+/*------------------------------------------------------------*/
+
+/*TABLAS!!!!!*/
+table{
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse; /*Esta linea es para eliminar unos bordecitos
+    en blanco que había. Es como si fuera las lineas de la columnas*/
+}
+
+/*Selecciona los hijos even, los pares, de las filas*/
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th{
+    background-color: #4CAF50;
+    color:white;
+    text-align: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }

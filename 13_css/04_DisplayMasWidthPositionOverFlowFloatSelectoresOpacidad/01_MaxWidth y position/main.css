@@ -1,0 +1,30 @@
+body {
+    background-color: #eee;
+}
+
+p{
+    max-width: 350px; /*limitar el ancho MAXIMO en la ventana*/
+    /*width indica el tamaño del contenido.
+    Al redimensionar la ventana con width aparece una barra de scroll
+    porque el contenido es de 350px mientras que con max-width no aparece
+    dicha barra de scroll.*/
+    /*width: 350px*/
+    background-color: #f00;
+    margin:auto;
+
+    /*position por defecto es static, pero tiene otras opciones...
+        relative: posicion relativa, se puede completar con:
+            right: px
+            left
+            top
+            bottom
+        fixed: Se queda fijo. Aunque hagas scroll, se va a  quedar ahi.
+            Esto es util si queremos que algo este siempre visible aunque se 
+            haga scroll. Es util en menus que por ejemplo queremos que se 
+            queden abiertos aunuqe se haga scroll*/
+    
+    /* position:relative;
+    right:15px; */
+    position: fixed; /*Dale zoom, haz scroll y mira como hola soy un parrafo queda
+    fijo arriba y los lalala se mueven.*/
+}

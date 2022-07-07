@@ -1,0 +1,26 @@
+body {
+    background-color: #eee;
+}
+
+img{
+    /*La imagen flota en la posicion indicada y el parrafo aparecera en la posicion contraria.
+        -right: la imagen flota a la derecha, asi que el texto se va a la izquierda
+        -left: la imagen flota a la izquierda, asi que el texto se va a la derecha*/
+    float: left;
+}
+
+/*hover: cuando se pasa el raton por encima de la imagen*/
+img:hover{
+    /*opacity toma un valor entre 0 y 1.
+    Se suele usar en un img hover para que al pasar el raton por 
+    encima de la imagen de la sensacion de que se ha seleccionado
+    porque se vuelve semitransparente y eso la vuelve un poco blanca*/
+    opacity: 0.8;
+}
+
+/*Esto es un selector... Se seleccionan los 'p' que esten dentro
+de un div*/
+div p{
+    color:#F00;
+
+}

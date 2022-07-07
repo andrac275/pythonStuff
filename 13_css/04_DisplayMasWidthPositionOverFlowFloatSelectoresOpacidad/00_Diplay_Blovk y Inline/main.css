@@ -1,0 +1,19 @@
+body {
+    background-color: #eee;
+}
+
+p{
+    /*display es para cambiar la propiedad por defecto...
+    Existen inline y block, mirar el html, pues se puede hacer que un bloque sea inline
+    y que un inline sea un bloque. Incluso volver algo invisible*/
+    
+    /*display:
+        inline: vuelve inline un bloque
+        block: vuelve bloque un inline
+        none: hace que no se vea*/
+    /*display: inline;*/
+}
+
+#invisible{
+    display: none;
+}
