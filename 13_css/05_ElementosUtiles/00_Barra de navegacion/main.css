@@ -1,3 +1,40 @@
 body {
     background-color: #eee;
 }
+/*Todo este css es para que el menu se quede arriba en horizontal y se quede fijo
+aunque se haga scroll.*/
+ul{
+    list-style: none; /*quitar los circulos de la lista*/
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left:0; /*para que no se vea un borde blanco a la izquierda del menu*/
+    width: 100%; /*para que ocupe todo el ancho de la ventana*/
+    background-color: #333;
+}
+
+li{
+    float: left; /*Esto es como meter un inline*/
+}
+
+li a {/*para los links dentro de la lista...*/
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+li:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+
+.active{
+    background-color: #4CAF50;
+}
+
+.content{
+    margin-top: 55px;
+}
