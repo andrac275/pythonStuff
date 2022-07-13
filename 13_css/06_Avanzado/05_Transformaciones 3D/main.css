@@ -16,23 +16,15 @@ body {
     La p tiene por defecto displayblock, asi que las siguientes lineas se le pueden aplicar
     perfectamente...*/
 
-    /*A transfomr se le puede aplicar...
-        rotate(Xdeg); para rotar X grados: rotate(-20deg) 
-        translate(desplazarEjeX , desplazarEjeY)
-        scale(multiplicadorEjeX, multiplicadorEjeY) es para escalar a mayor o menor tamaño
-            El 1 es el valor actual, menor a 1 es disminuir y mayor que 1 es aumentar el tamaño
-        scaleX(valor) o scaleY(valor) cambia el tamaño solo de un eje u otro.
-        
-        skew(RetorxerEjeXdeg , RetorcerEjeYdeg)
-            Ejemplo: skew(25deg,10deg)
-        skewX(Xdeg) o skewY(Xdeg): Retuerce en X grados el eje X o el eje Y
-            Ejemplo: skew(25deg)
-        */
-    transform: skewY(30deg);
-}
-
-.box:hover{
-    /*Esto haria que al pasar el mouse por encima aumente el tamaño y de la impresion de que 
-    ha sido seleccionado*/
-    /* transform: scale(1.05,1.05); */
+    /*Transformar en 3D es utilizar rorateX, rotateY ,rotateZ con el transform
+    porque lo que hace es rotar sobre el ejeX, el ejeY o el ejeZ... parece que se haga peque
+    al poner los grados, pero realmente es que rota.
+        rotateX(Xdeg): Gira en horizontal, sobre el ejeX. Da la sensacion que se hace pequeño pero es porque lo superior se va hacia 
+            el fondo y lo inferior del div viene hacia ti.
+                Poner valores entre 0 y 90, siendo 0 lo normal y 90 una linea plana porque se tendria que ver des
+                de arriba.
+        rotateY(Xdeg): Gira en vertical sobre el ejeY
+        rotateZ(Xdeg): Gira sobre el centro... es como el rotate normal.
+    */
+    transform: rotateY(45deg);
 }
