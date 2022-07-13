@@ -1,0 +1,20 @@
+body {
+    background-color: #eee;
+}
+
+.fondo{
+    /* background-image: linear-gradient(direccion, color1, color2...) 
+        direccion:
+            to left, to top, to bottom, to right
+            diagonal: to bottom right, to top left...
+
+            funciona con grados tambien. -30deg por ejemplo
+        */
+    /* background-image: linear-gradient(red, yellow) */
+    /* background-image: linear-gradient(to top right, red, yellow) */
+    /* background-image: linear-gradient(-30deg, red, yellow) */
+    /* background-image: linear-gradient(-30deg, red, yellow,blue,green) */
+    /* background-image: linear-gradient(-30deg, rgba(255,0,0,0.5), yellow) */
+    background-image: repeating-linear-gradient(-30deg, rgba(255,0,0,0.5) 10%, yellow 30%)
+
+}

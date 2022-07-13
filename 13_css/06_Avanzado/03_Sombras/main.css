@@ -1,0 +1,26 @@
+body {
+    background-color: #eee;
+}
+
+.box{
+    /* 
+        box-shadow: pixVertical pixHorizontal; 
+        box-shadow: pixVertical pixHorizontal pixDifuminado;
+        box-shadow: pixVertical pixHorizontal pixDifuminado color;
+        box-shadow: pixVertical pixHorizontal pixDifuminado color inset;
+            inset da la sensacion de que el elemento se hunde. Si no lo ponemos sale
+            la sombra y parece que esté hacia afuera. Con inset es al reves.
+    */
+    box-shadow: 2px 2px 4px rgba(255,0,0,0.6) inset;
+
+    /*
+        Un ejemplo de sombra podria ser...    
+    */
+    /* box-shadow: 1px 1px 2px rgba(0,0,0,0.3); */
+}
+
+/*Estas dos lineas dan la sensacion de que el texto está levantado.*/
+.text{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3)
+}

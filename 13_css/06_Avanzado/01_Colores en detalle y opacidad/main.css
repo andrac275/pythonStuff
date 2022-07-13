@@ -1,0 +1,23 @@
+body {
+    background-color: #eee;
+}
+
+.fondo{
+    /*Tres maneras de dar el color...*/
+    /*En hexadecimal: Con 6 o 3 simbolos hexadecimales*/
+    /* background-color: #ffef0e; */
+    /* background-color: #aaa; */
+
+    /*Con rgba: red, green, blue, alpha (opacidad)*/
+    /* background-color: rgba(0,0,0,0.5); */
+
+    /*Con hsl: Hue, Saturation, Lightness. Matiz, Saturacion, Luminosidad
+        -Hue: Valores de 0 a 360. 0 rojo, 120 verde y 240 azul
+        -Saturation: Porcentaje de saturacion
+        -Lightness: Porcentaje del brillo. 0 es negro y 100 es blanco*/
+    /* background-color: hsl(300,50%,75%); */
+        /*Se puede añadir un alpha, que es la opacidad*/
+    background-color: hsl(300,50%,75%,0.6);
+    /*Valor entre 0 y 1, que afecta a todo el div:'fondo', no solo al color trasero*/
+    opacity: 0.5;
+}

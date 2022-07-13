@@ -1,0 +1,37 @@
+body {
+    background-color: #eee;
+}
+
+.fondo{
+    height: 400px;
+
+    background-color: greenyellow;
+    
+    background-image: url('https://placekitten.com/200/300');
+    /*background-repeat toma como opciones...
+        no-repeat: la pone la imagen y no se repite
+        repeat-x: repite la imagen sobre el ejeX, en horizontal
+        repeat-y: repite sobre el eje y, en vertical
+        no poner 'background-repeat' deja un mosaico que se repite x e y llenando todo*/
+    background-repeat: no-repeat;
+
+    /*background-position es para darle la posicion a la imagen. No poner la
+    background-position, la pone arriba a la izquierda*/
+    background-position: left top;
+
+    /*background-attachment:
+        scroll: es por defecto. Se queda la imagen en una posicion
+        fixed: la imagen sigue al hacer scroll. Haz zoom para ver el efecto.*/
+    background-attachment: fixed;
+
+    /*background-size: para decir el tamaño de la imagen y redimensionar
+        cover: rellena todo el espacio disponible con la imagen. En este caso todo el div.     
+    */
+    background-size:cover
+
+    /*Todo lo anterior en una linea... Respetar el orden!!!
+        el background-size se pone con una linea a parte.
+    */
+    /* background: green url('https://placekitten.com/200/300') no-repeat left top fixed; */
+
+}
