@@ -1,0 +1,20 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    /*como la class grid tiene en el display el grid, todo lo que haya dentro
+    va a heredar ese grid, por tanto los tres div de la class element tendran el grid
+    y se las considera un grid tambien.
+    
+    Podemos usar...
+    display grid    ocupa todo el ancho de la pagina, mirar el background color rojo y lo entenderas
+    display inline-grid     el grid ocupa solo el tamaño ocupado por el contenido, mira el background color, añade texto a los divs
+        y lo entenderas
+    */
+    display: grid;
+}
+
+.element{
+    background-color: red;
+}

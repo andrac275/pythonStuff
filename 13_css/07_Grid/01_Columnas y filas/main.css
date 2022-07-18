@@ -1,0 +1,34 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    /*grid-template-rows es para inddicar la separacion entre las filas.
+        Entre la primera y la segunda se separan 50 px
+        Entre la segunda y la tercera se separan 100 px
+        Entre la tercera y la cuarta se separan 75px
+        De la cuarta en adelante (D,E,F), como no decimos nada, lo hace 
+            automatico y automatico es que coge la separacion del contenido del grid
+    */
+    /* grid-template-rows: 50px 100px 75px; */
+
+    /*
+        *grid-template-columns crea columnas con el tamaño especificado.
+        PEj:
+            grid-template-columns: 50px 100px 75px; crea tres columnas de 50 100 y 75 y pone dentro los datos
+        *Otra nomenclatura: fr (fracciones), divide el ancho total entre la suma de todas las fracciones y lo divide
+        El ejemplo siguiente suma 6fr. El primer dato ocupara 1 fraccion a la izquierda, el segundo dato las dos siguientes
+        fracciones y el tercer dato en la tercera columa, las 3 fracciones restantes
+            grid-template-columns: 1fr 2fr 3fr ;
+        *Se pueden combinar entre varias:
+             grid-template-columns: 2rem 20% 1fr 2fr;
+    */
+    grid-template-columns: 50px 100px 75px;
+    /* grid-template-columns: 1fr 2fr 3fr ; */
+    /* grid-template-columns: 2rem 20% 1fr 2fr; */
+}
+
+.element{
+    background-color: red;
+}

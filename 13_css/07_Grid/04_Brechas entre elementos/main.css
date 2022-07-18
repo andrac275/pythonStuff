@@ -1,0 +1,29 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    
+    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: 30px repeat(3,1fr) 15px;
+
+    /*
+    grid-ALGO-gap: mete una separacion entre columnos o filas
+        grid-row-gap: 20px; 20px de separacion entre las filas
+        grid-column-gap:5px; 5px de separacion entre columnas
+
+    Homonimamente, todo en una misma fila:
+        grid-gap: separacionFilas separacionColumnas
+        grid-gap: 20px 5px
+
+        grid-gap: separacion    da la misma separacion entre filas y columnas
+        grid-gap: 15px      separa filas y columnas 15px
+    */
+    grid-row-gap: 20px;
+    grid-column-gap:5px;
+}
+
+.element{
+    background-color: red;
+}

@@ -1,0 +1,25 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+
+    /*
+        minmax indica el tamaño minimo y maximo
+        grid-template-rows: minmax(100px, auto);
+            El tamaño minimo de las filas es de 100px y el maximo es automatico, por tanto cogera todo lo que pueda segun el contenido
+
+        grid-template-columns: minmax(auto,50%);
+            El tamaño minimo de las columnas es automatico, por tanto cogera como minimo el ancho del texto pero siempre que no sobrepase del 50% de todo
+
+        Igual que en el apartado anterior, se pueden usar mas valores para diferenciar mas columnas:
+            grid-template-columns: minmax(auto,50%) 1fr  30px 3em;
+    */
+    grid-template-rows: minmax(100px, auto);
+    grid-template-columns: minmax(auto,50%);
+}
+
+.element{
+    background-color: red;
+}

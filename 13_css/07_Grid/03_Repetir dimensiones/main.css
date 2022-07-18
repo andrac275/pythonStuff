@@ -1,0 +1,24 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    /*
+        repeat: (arg1, arg2)
+            arg1: Numero de veces que se repite el arg2
+            arg2:
+
+        grid-template-rows: repeat(2, 50px); Crea 2 filas separadas por 50px entre ellas
+        grid-template-columns: repeat(3,1fr); Crea 3 columnas separadas por 1 fraccion entre ellas.
+    
+        Se pueden combinar... como siempre:
+        grid-template-columns: 30px repeat(3,1fr) 15px; Esto hace que la primera columna sea 30px, la 2º 3º 4º de 1 fr cada una y la 5ª es 15px
+        */
+    grid-template-rows: repeat(2, 50px);
+    grid-template-columns: repeat(3,1fr);
+}
+
+.element{
+    background-color: red;
+}
