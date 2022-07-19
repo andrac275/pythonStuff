@@ -1,0 +1,47 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    /* background-color: red; */
+    display: grid;
+  
+    grid-template-areas:    "header header"
+                            "content sidebar"
+                            "footer footer";
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-columns: 1fr 200px;
+
+    grid-auto-rows: 140px;  
+    grid-auto-flow: row;   
+
+    /*Para alinear con el EJE HORIZONTAL... justify-items: ALGO
+        start: valor por DEFECTO, pone el texto a la izquierda
+        center: pone el texto en el centro
+        end: pone el texto a la derecha
+        stretch: estira los items para que utilicen todo el alto y el ancho
+            Usa stretck y mira el color rojo y veras como lo ocupa todo, si pones start/center/end veras que no se ocupa todo
+    */
+    justify-items: stretch;
+
+    /*Para alinear con el EJE VERTICAL... align-items: ALGO
+        start: pone el texto arriba en la fila
+        center: pone el texto en el centro de la fila
+        end: pone el texto abajo en la fila
+        stretch: valor por DEFECTO, estira los items para que utilicen todo el alto y el ancho
+            Usa stretck y mira el color rojo y veras como lo ocupa todo, si pones start/center/end veras que no se ocupa todo
+    */
+    align-items: start;
+}
+
+
+.header{   
+
+    grid-column: col-inicio / col-fin 3;   
+    grid-row: row-inicio / row-fin 3;   
+
+}
+
+.red{
+    background-color: red;
+}

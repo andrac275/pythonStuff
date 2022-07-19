@@ -1,0 +1,51 @@
+html{
+    height: 100%;
+}
+
+body {
+    background-color: #eee;
+    margin: 0px; /*Para quitar el margen por defecto que trae el body*/
+    height:100%;
+}
+
+.grid{    
+    display: grid;
+  
+    width: 100%; /*Para que use el 100% de la pantalla horizontal*/
+    height: 100%; /*Junto al height del body... para que use el 100% vertical de la pantalla*/
+    grid-template-columns: repeat(4,50px);    
+    grid-template-rows: repeat(4,50px); 
+    grid-gap: 5px;
+
+    /* Como esta usando el width del 100% , se puede mover la grilla.
+    
+    PARA EL EJE HORIZONTAL
+    justify-content: ALGO
+        start: Por defecto
+        center
+        end
+        space-around: da un espacio al inicio, al final y entre elementos de las columnas. El espacio al inicio y final es la mitad que entre columnas.
+        space-between: misma funcionalidad que space-around pero sin reservar espacio al inicio y al final, solo entre columnas.
+        space-evenly: Igual que space-around pero el espacio al inicio, entre columnas y al final, es IGUAL    
+    */
+    justify-content: start;
+   
+    /* Se tiene que poner en el CSS que: html,body y grid que la altura height es del 100% pra que se vea el movimiento. Se tiene que usar el 100% de altura
+        de la pantalla en todo (html,body,grid) para que se pueda ver
+    
+    PARA EL EJE VERTICAL
+    align-content: ALGO
+        start: Por defecto
+        center
+        end
+        space-around: da un espacio al inicio, al final y entre elementos de las filas. El espacio al inicio y final es la mitad que entre filas.
+        space-between: misma funcionalidad que space-around pero sin reservar espacio al inicio y al final, solo entre filas.
+        space-evenly: Igual que space-around pero el espacio al inicio, entre filas y al final, es IGUAL    
+    */
+    align-content: end;
+}
+
+.red{
+    background-color: red;
+}
+

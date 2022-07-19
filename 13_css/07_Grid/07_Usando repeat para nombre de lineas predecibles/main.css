@@ -1,0 +1,30 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    
+    /*
+    Dar nombre a muchas lineas a la vez usando repeat...
+    grid-template-rows: repeat(2, [row-inicio] 50px [row-fin]);
+    Esto anterior tiene una cosa graciosa... y es que como no se pueden repetir nombres pero le decimos que lo haga 2 veces
+    lo que pasara sera que la primera linea tiene un row-inicio y row-fin, pero la isuginete linea tendra row-inicio2 como nombre y row-fin2
+    se llaman asi, numeradas automaticamente.
+    */
+    grid-template-rows: repeat(2, [row-inicio] 50px [row-fin]);
+    grid-template-columns: repeat(3, [col-inicio] 1fr [col-fin]);
+
+    grid-gap:15px;
+}
+
+.element{
+    background-color: red;
+}
+
+.header{   
+
+    grid-column: col-inicio / col-fin 3;   
+    grid-row: row-inicio / row-fin 3;   
+
+}

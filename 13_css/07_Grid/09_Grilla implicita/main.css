@@ -1,0 +1,44 @@
+body {
+    background-color: #eee;
+}
+
+.grid{
+    display: grid;
+    /*Esto aquí es una GRID EXPLICITA es algo que nosotros definimos y decimos donde van las cosas...
+    
+    La GRID IMPLICITA es todo el contenido que se encuentre dentro del grid y que no haya sido definido
+    del grid-template-areas/rows/columns
+    Abajo tenemos 3 filas y 2 columnas, 3*2=6 podemos tener hasta 6 de contenido para mostrar en la EXPLICITA
+    si añadimos mas contenido, se añadira a la grilla IMPLICITA los divContent que hay debajo del footer en el html
+    forman parte pues de la grilla implicita.
+    */
+
+    grid-template-areas:    "header header"
+                            "content sidebar"
+                            "footer footer";
+    grid-template-rows: 150px 1fr 100px;
+    grid-template-columns: 1fr 200px;
+
+    /*ESTO ES PARA LA GRID IMPLICITA!!!!
+    
+        *El grid-auto-rows/columns se utiliza para dar valores a todo lo que sea IMPLICITO porque no esta definido
+        *El grid-auto-flow: column/row; Dice todo lo que se añada implicito si sera columnas o filas. Por defecto es filas (si no lo ponemos).
+    */
+    grid-auto-rows: 140px;  /*Añade 140px de separacion entre las filas implicitas*/
+    grid-auto-flow: row;    /*row es por defecto, acepta 'column' y hace que se ordenen por columnas*/
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.header{   
+
+    grid-column: col-inicio / col-fin 3;   
+    grid-row: row-inicio / row-fin 3;   
+
+}
