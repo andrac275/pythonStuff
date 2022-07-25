@@ -1,0 +1,36 @@
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+
+    height: 200px;
+
+}
+
+.red{
+    background-color: red;
+}
+
+
+.primero{    
+    flex: 1 120px; 
+}
+
+.segundo{
+    flex-grow:1; 
+}
+
+.tercero{
+    flex-grow:2; 
+    /*
+        align-self: ALGO es para un contenido moverlo... se acepta:
+            auto:
+            flex-start
+            flex-end
+            center
+            baseline: lo pega a la base de la linea, arriba, usando solo el espacio que requiere, no todo el alto del contenedor
+            stretch: Estira el item para usar todo el espacio disponible
+
+        Las opciones float, clear y vertical-align no tienen efecto en flex aqui dentro.
+    */
+    align-self: center;
+}

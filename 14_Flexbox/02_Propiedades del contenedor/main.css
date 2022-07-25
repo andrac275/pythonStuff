@@ -1,0 +1,37 @@
+body{
+    width: 200px;
+}
+
+.flex{
+    display: flex;
+    /*
+        flex-direction: ALGO
+            row: forma de fila, es por defecto
+            row-reverse: pone la fila al reves en el orden.
+            column:
+            column-reverse: invierte el orden en la columna
+    */
+    flex-direction: row;
+
+    /*
+        El body tiene un ancho de 200px y el contenido sobrepasa esos 200px y se sale de estos...
+        Como se puede hacer que aparezca a continuacion???
+
+        flex-wrap: ALGO;
+            no-wrap: valor por defecto, hace que el contenido se salga de los 200px (para este caso)
+            wrap: si un div no cabe entero dentro de los 200px de la fila, lo pasa a la siguiente.
+            wrap-reverse: el contenido se agrega de abajo para arriba
+
+    */
+    flex-wrap: wrap;
+
+    /*
+        flex-flow combina flex-direction y flex-wrap
+        flex-flow: DIRECTION WRAP
+
+        EJEMPLO
+        flex-flow: row wrap; es equivalente a flex-direction: row; + flex-wrap: wrap;
+    */
+
+    /* flex-flow: row wrap; */
+}

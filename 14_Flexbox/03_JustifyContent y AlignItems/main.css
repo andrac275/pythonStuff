@@ -1,0 +1,38 @@
+body{
+    width: 200px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* flex-flow: row wrap; */
+
+    /*Es lo mismo que se vio en GRID pero con otra sintaxis:
+    
+    justify-content: ALGO
+        flex-start;
+        flex-end;
+        center
+        space-between: añade espacios entre los distintos divs que hay en html
+        space-around: deja espacios en el inicio y final igual a la mitad de ancho que lo que hay entre los divs del medio
+        space-evenly: el espacio del inicio y el final es de la misma anchura que el que hay entre los divs del centro
+    */
+    justify-content: space-between;
+    
+    /*
+    align-items: ALGO
+        flex-start; valor por defecto
+        flex-end;
+        center
+        stretch: utiliza todo el contenido en altura, con el background color se ve
+        space-between: añade espacios entre los distintos divs que hay en html
+        space-around: deja espacios en el inicio y final igual a la mitad de ancho que lo que hay entre los divs del medio
+        space-evenly: el espacio del inicio y el final es de la misma anchura que el que hay entre los divs del centro
+    */
+    align-items: stretch;
+}
+
+.red{
+    background-color: red;
+}

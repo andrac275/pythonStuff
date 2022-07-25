@@ -1,0 +1,33 @@
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+
+    height: 200px;
+
+}
+
+.red{
+    background-color: red;
+}
+
+/*
+    Con flex-basis: INTpx da un ancho inicial y el resto se reparte segun el flex-grow
+
+    Se pueden combinar ambas propiedades con: flex: GROW BASIS
+    por tanto...
+    flex: 1 120px; equivale a
+    flex-grow:1; 
+    flex-basis: 120px;
+*/
+.primero{
+    flex-grow:1; /*utiliza 1 fraccion de espacio*/
+    flex-basis: 120px;
+    /* flex: 1 120px;  */
+}
+
+.segundo{
+    flex-grow:1; /*utiliza 1 fraccion de espacio*/
+}
+.tercero{
+    flex-grow:2; /*utiliza 2 fracciones de espacio, el doble de primero y segundo*/
+}

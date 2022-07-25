@@ -1,0 +1,28 @@
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+
+    height: 200px;
+
+}
+
+.red{
+    background-color: red;
+}
+
+/*
+    Con flex-grow: ENTERO se dice cuanto puede crecer un elemento.
+    Por defecto todos tienen flex-grow: 0;
+    pero se le puede cambiar...
+
+*/
+.primero{
+    flex-grow:1; /*utiliza 1 fraccion de espacio*/
+}
+
+.segundo{
+    flex-grow:1; /*utiliza 1 fraccion de espacio*/
+}
+.tercero{
+    flex-grow:2; /*utiliza 2 fracciones de espacio, el doble de primero y segundo*/
+}

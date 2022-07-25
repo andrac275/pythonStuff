@@ -1,0 +1,31 @@
+body{
+    width: 200px;
+}
+
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+
+    height: 200px;
+
+}
+
+.red{
+    background-color: red;
+}
+
+/*Todos los hijos de un contenedor flex, y aqui tenemos 6 hijos porque hay 6 divs dentro del div de class flex,
+tienen la propiedad de order a 0 por defecto
+    Los elementos se ordenan en orden ordinal:
+        -inifinito...-2,-1,0,1,2,3...infinito
+    En el ejemplo de abajo, el elemento primero lo pondra detras de todos los 0, que es el valor por defecto y 
+    el elemento tercer lo pondra delante de todos los elementos 0.
+
+*/
+.primero{
+    order: 1;
+}
+
+.tercero{
+    order: -1;
+}

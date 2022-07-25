@@ -1,0 +1,35 @@
+body{
+    width: 200px;
+}
+
+.flex{
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+
+    justify-content: space-evenly;
+    /* align-items: stretch; */
+
+    /*
+    Para  que tenga sentido el alignContent, hay que darle una altura mayor a la que tiene, asi que vamos a asignar
+    200px para este experimento y que se vean cosas y como interactua
+    */
+    height: 200px;
+    /*En esta seccion se usara align-content:ALGO, dice como se organizaran las cosas dentro de estos 200px de altura
+    que tenemos...
+        flex-start: valor por defecto
+        flex-end: mueve al final de la columna, abajo del todo
+        center: mueve al centro de los 200 px
+        stretch: trata que todos elementos ocupen todo el espacio
+        space-between: deja un espacio entre medio de mismas dimensiones pero no al final
+        space-around: espacio al inicio y al final de tamaño la mitad que entre las filas de en medio
+        space-evenly: espacio al inicio, al final y entre medio de la misma separacion, queda todo repartido mas uniforme
+    */
+    align-content: space-evenly;
+
+}
+
+.red{
+    background-color: red;
+}
