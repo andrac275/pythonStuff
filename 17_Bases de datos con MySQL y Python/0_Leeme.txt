@@ -1,0 +1,4 @@
+Para connectar python con mysql, hay que instalar la libreria python y mysql ejecuntando en la consola el siguiente comando:
+	pip3 install mysql-connector-python
+
+Despues ya se importa des del fichero py.
