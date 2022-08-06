@@ -1,0 +1,118 @@
+1.COMANDOS IMAGENES DE DOCKER
+-----------------------------
+-Ver las imagenes instaladas: Tiene info util como el nombre de la imagen o el ID
+	docker images
+-Instalar una imagen:
+	-Mirar en en el hub de docker la imagen que queremos.	 https://hub.docker.com/
+	-Instalar la imagen: docker pull IMAGEN
+		PEj. docker pull node		<- Esto baja la 'latest' verseion
+		PEj. docker pull node:18	<-Esto baja la version 18 especificamente
+-Borrar una imagen
+	docker image rm node:18		<-Para borrar la imagen de node 18
+	docker image rm node	<- Para borrar node
+
+#################################
+2.COMANDOS CONTENEDORES DE DOCKER
+---------------------------------
+-Despues de crear la imagen (punto 1)...
+-Para LISTAR INFORMACION los contenedores 
+	docker ps -a	<- Lista activos y no activos
+	docker ps		<- Lista solo los containers activos
+
+-Para CREAR un contenedor se usa el nombre de la imagen
+	1.Crear sin mas:
+	docker create NOMBREIMAGEN	ó	docker container create NOMBREIMAGEN
+		Ej: docker create node	<-(Devuelve la id de un contenedor)
+		Ej: docker container create node	<- Hace lo mismo que la linea anterior, son sinonimas.
+
+	2.CREAR con NOMBRE en el contenedor:
+	docker create --name Juanita NOMBREIMAGEN	<- Crea un container que al ejecutar 'docker ps -a' aparece con name "Juanita"
+
+	3. CREAR asignando PUERTOS y NOMBRE
+	docker create -pPUERTOFISICO:PUERTOCONTAINER --name Juanita mongo
+		Ej. docker create -p27017:27017 --name Juanita mongo <- crea un container que relaciona el 27017 de la maquina fisica con el 27017 del container, llamado Juanita, usando mongo de imagen base
+
+-Para ARRANCAR el contenedor...
+	docker start IDContenedor ó docker start NombreContenedor
+		Ej. docker start 0e3a967efedc <- con la ID
+		Ej. docker start Juanita <- con el nombre que se le dio manual o por defecto.
+
+-Para PARAR	el contenedor...
+	docker stop IDcontenedor ó docker stop NombreContenedor
+		docker stop 0e3a967efedc
+		docker stop Juanita
+
+-Para BORRAR el contenedor...
+	docker rm IDContenedor o docker rm NombreContenedor
+
+-Para ver los LOGS y saber que funciona...
+	docker logs Juanita		<- Saca los logs y te devuelve la la linea de comando
+
+	docker logs --follow Juanita	<-Saca los logs y se queda escuchando por si llegan mas... Ctrl+C para dejar de escuchar.
+
+#################################
+COMANDOS SUELTOS:
+	docker run mongo <- Esto baja la imagen si no existe, crea el contenedor y lo ejecuta, PERO se queda escuchando logs y darle Ctr+C para el container.
+
+	docker run -d mongo <- Hace lo mismo que el anterior, pero te devuelve el control, no se queda escuchando logs, asi que podemos seguir trabajando
+
+	docker run --name Juanita -p27017:27017 -d mongo
+
+#################################
+REDES en docker:
+Los container estan isolados entre ellos, no tienen comunicacion, pero se puede hacer que varios containers pertenezcan a una red en concreto.
+
+Se pueden LISTAR REDES
+	docker network ls	<- Muestra un listado de redes disponibles
+
+Se pueden CREAR REDES:
+	docker network create NOMBRE
+		Ej. docker network create mired
+
+Se pueden BORRAR REDES:
+	docker network rm NOMBRE
+		docker network rm mired
+
+Asignar la red al container...
+	docker create -p27017:27017 --name Juanita --network mired mongo
+
+#################################
+Archivo: DOCKERFILE
+Archivo "Dockerfile" se tiene que llamar asi, por cojones. Mira en la carpeta que está Dockerfile y mira lo que hace...
+	Se utiliza para darle la configuracion al contenedor a la hora de arrancar (para no tener que hacerlo manualmente)
+	Asi como tambien se usa para dar las variables de entorno.	
+
+Dockerbuild: para crear imagenes y containers a partir de un fichero Dockerfile
+
+	docker build -t NOMBREIMAGEN:ETIQUETA RUTADOCKERFILE
+		Ej. docker build -t miapp:v1 .	
+
+#################################
+Archivo: DOCKERFILE-COMPOSE
+	Este archivo esta en la carpeta de ejemplo y aparece como arrancar los contenedores.
+	Con el comando de a continuacion se ejecuta el compose y arranca todo.
+Comando: docker compose up
+	Si se pulsa Ctrl+C se paran los contenedores
+	La proxima vez que se haga un compose up, no creara nada, utiliza lo que ya creó la primera vez.
+
+El siguiente comando lo que hace es borrar todo lo que el dockerfile crea. Borra las redes, los contenedores etc
+Comander: docker compose down
+
+#################################
+VOLUMES:
+	Cuando te cargas un contenedor, te cargas su sitema de archivs... Con volumes se puede cargar un sistema de archivos del ordenador anfitrion y de esta
+	manera que puedan persistir los datos. 
+
+	Se indican en el docker-compose.yml
+
+#################################
+dockerfile.dev y docker-compose-dev.yml:
+	Estos dos son para hacer pruebas, asi se puede diferenciar entre un ambiente de produccion (dockerfile + docker-compose) y uno de desarrollo (docker-compose-dev). Mirar como se hacen en los que hay de ejemplo
+
+	Para arrancarlos se usa el comando:
+	docker compose -f docker-compose-dev.yml up		La opcion -f es para indicar un archivo distinto del dockerCompose normal.
+
+
+
+
+

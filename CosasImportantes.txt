@@ -1,4 +1,11 @@
 Esta pagina es importante porque es un marketplace de modulos hechos por otras personas. Es interesante echarle un ojo por si hay cosas ya hechas por otros. No es malo usar codigo de otros. Mirar la seccion de 06_Modulos, el archivo 01_pip_camelCase, para mas info.
 https://pypi.org/
 https://pypi.org/
-https://pypi.org/
+
+#################
+DockerHub para descargar imagenes ya montadas.
+https://hub.docker.com/
+https://hub.docker.com/
+
+#################
+

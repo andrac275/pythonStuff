@@ -1,0 +1,11 @@
+Ya esta instalado... ahora en una consola donde vayamos a ejecutar cosas se activa el espacio virtual (como antes) y ya podemos trabajar:
+	. venv/Scripts/activate
+
+Despues hay que importar el Flask para que funcione, se hace con:
+	export FLASK_APP=holamundo.py
+
+A continuacion, se importa el development. Esto es para que no muestre un mensaje es que estamos en PRODUCCION en la consola (y que realmente somos DEVELOPMENT). Además, tenerlo en development hace que los cambios que se hagan en archivos y demas se actualizen sin necesidad de tener que reiniciar el programa.
+	export FLASK_ENV=development
+
+Finalmente se ejecuta escribiendo en consola:
+	flask run

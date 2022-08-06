@@ -1,0 +1,11 @@
+FROM node:18
+
+#nodemon mete un hotreload, para que cuando se cambien cosas en el codio JS que corre node, no haya que reiniciar los contenedores. Automaticamente aplica los cambios al modificar y guardar los archovos JS.
+RUN npm i -g nodemon
+RUN mkdir -p /home/app
+
+WORKDIR /home/app
+
+EXPOSE 3000
+
+CMD ["nodemon" , "index.js"]

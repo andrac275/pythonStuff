@@ -1,0 +1,20 @@
+1. Se llama microFlask porque no tiene todas las funcionalidades de un franework pero es muy bueno igualmente y permite crear apps web, asi que a darle.
+
+#####
+
+Info:Antes de nada, hay que crear espacios virtuales, estos se utilizan por si queremos tener distintas versiones de librerias o incluso del propio python. Con los ambientes virtuales se puede usar python 3.3 en un sitio y python 1.23 en otro... O el mysql X version en un sitio y el mysqle Y version en otro.
+
+Para instalar los espacios virtuales se crea una carpeta de workspace, en mi caso 'intro-flask' en esta misma carpeta y se accede con el bash. Una vez situado en dicha carpeta se ejecuta en windows: 
+	'py -3 -m venv venv' (sin las comillas simples)
+Aparecera una carpeta llamada 'venv' con contenido
+
+Ahora hay que activar el espacio virtual, para ello se ejecuta:
+	. venv/Scripts/activate
+Ya estamos en el espacio virtual, asi que ahora podemos instalar Flask.
+
+Para instalar flask, estando en el espacio virtual ()se sabe porque pone '(venv)' en la consola)...
+	pip install Flask
+
+##############
+Ya esta instalado... ahora en una consola donde vayamos a ejecutar cosas se activa el espacio virtual (como antes) y ya podemos trabajar:
+	. venv/Scripts/activate
