@@ -2,9 +2,9 @@ Ya esta instalado... ahora en una consola donde vayamos a ejecutar cosas se acti
 	. venv/Scripts/activate
 
 Despues hay que importar el Flask para que funcione, se hace con:
-	export FLASK_APP=holamundo.py
+	export FLASK_APP=holamundo.py		<-holamundo.py es el nombre del archivo a ejecutar
 
-A continuacion, se importa el development. Esto es para que no muestre un mensaje es que estamos en PRODUCCION en la consola (y que realmente somos DEVELOPMENT). Además, tenerlo en development hace que los cambios que se hagan en archivos y demas se actualizen sin necesidad de tener que reiniciar el programa.
+A continuacion, se importa el development. Esto es para que no muestre un mensaje es que estamos en PRODUCCION en la consola (y que realmente somos DEVELOPMENT). Además, tenerlo en development hace que los cambios que se hagan en archivos y demas se actualizen sin necesidad de tener que reiniciar el programa (porque en produccion no se está mirando continuamente si un archivo ha sido actualizado).
 	export FLASK_ENV=development
 
 Finalmente se ejecuta escribiendo en consola:
