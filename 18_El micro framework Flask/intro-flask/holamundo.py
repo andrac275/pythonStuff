@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 #el valor de __name__ lo que hace es poner el nombre del archivo cuando lo ejecutamos
     #en este caso holamundo.py
 app = Flask(__name__)
@@ -24,3 +24,21 @@ def lala():
 @app.route('/post/<post_id>')
 def post(post_id):
     return 'El id del post es: ' + post_id 
+
+#Metodos http web: GET POST PUT DELETE
+    #GET: listar
+    #POST: Crear
+    #PUT: Actualizar
+    #PATCH: Similar a PUT, pero solo actualiza mientras que PUT reemplaza.
+    #DELETE: Borrar
+#Lo siguiente solo permite GET o POST. Se pueden probar escribiendo en consola:
+    #Este falla porque no se permite el PUT como methods...
+        #curl -X PUT http://localhost:5000/postMethods/1
+    #Este funciona porque si se permite el GET:
+        #curl -X GET http://localhost:5000/postMethods/1
+@app.route('/postMethods/<post_id>' , methods=['GET','POST'])
+def postMethods(post_id):
+    if request.method == "GET":
+        return 'El id del post del metodo GET es: ' + post_id
+    elif request.method == "POST":
+        return 'Este es el metodo POST'
