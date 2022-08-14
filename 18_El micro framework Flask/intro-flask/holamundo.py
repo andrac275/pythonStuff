@@ -16,3 +16,11 @@ def index():
     #http://127.0.0.1:5000/lala
 def lala():
     return 'lala'
+
+#Las variables sirven para pasar informacion a python a traves de la url. Esto se llamaria con:
+#P Ej: http://127.0.0.1:5000/post/50 y le estamos pasando un 50
+#Si ponemos @app.route('/post/<int:post_id>') obligariamos a que post_id sea un entero, y diria que no puede concatenar
+#string con int, pero bueno, es para saber que se puede obligar a que se pase valores en concreto.
+@app.route('/post/<post_id>')
+def post(post_id):
+    return 'El id del post es: ' + post_id 
