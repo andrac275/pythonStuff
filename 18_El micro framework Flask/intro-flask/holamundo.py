@@ -17,6 +17,8 @@ def index():
 def lala():
     return 'lala'
 
+#################################################################
+
 #Las variables sirven para pasar informacion a python a traves de la url. Esto se llamaria con:
 #P Ej: http://127.0.0.1:5000/post/50 y le estamos pasando un 50
 #Si ponemos @app.route('/post/<int:post_id>') obligariamos a que post_id sea un entero, y diria que no puede concatenar
@@ -25,6 +27,7 @@ def lala():
 def post(post_id):
     return 'El id del post es: ' + post_id 
 
+###############################################################
 #Metodos http web: GET POST PUT DELETE
     #GET: listar
     #POST: Crear
@@ -42,3 +45,19 @@ def postMethods(post_id):
         return 'El id del post del metodo GET es: ' + post_id
     elif request.method == "POST":
         return 'Este es el metodo POST'
+
+###########################################################
+ #Se pueden hacer llamadas con curl.
+    #-d para darle datos, sea un JSON o datos manuales
+    #-X para indicar el metodo: GET POST...
+    #la url sobre la que se realiza
+    #Ej: curl -d "llave1=dato1&llave2=dato2" -X POST http://localhost:5000/lele
+
+
+@app.route('/lele', methods=['POST'])
+    #http://127.0.0.1:5000/lele
+def lele():
+    print(request.form)
+    print(request.form['llave1'])
+    print(request.form['llave2'])
+    return 'lele'
