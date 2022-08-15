@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for,redirect,abort
+from flask import Flask, request, url_for,redirect,abort,render_template
 #el valor de __name__ lo que hace es poner el nombre del archivo cuando lo ejecutamos
     #en este caso holamundo.py
 app = Flask(__name__)
@@ -93,3 +93,16 @@ def errorAbort():
     #abort(401)
     abort(403)
 
+###########################################################
+#RENDERIZANDO PLANTILLAS HTML
+#Lo que se le quiere devolver al usuario no son prints ni errores que hemos visto hasta ahora... Sino que queremos
+#dvolver objetos JSON o paginas html
+
+#Los archivos se guardan en una carpeta llamada "templates", asi que hay que crear la carpeta y los documentos html dentro
+@app.route('/renderizarTemplates', methods=['POST','GET'])
+def renderizarTemplates():
+    #Los archivos se guardan en una carpeta llamada "templates", asi que hay que crear la carpeta y los documentos html dentro
+    return render_template('blabla.html')
+
+###########################################################
+#Respoindiendo con JSON
