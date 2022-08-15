@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for
+from flask import Flask, request, url_for,redirect
 #el valor de __name__ lo que hace es poner el nombre del archivo cuando lo ejecutamos
     #en este caso holamundo.py
 app = Flask(__name__)
@@ -75,3 +75,11 @@ def lili():
     print(request.form['llave1'])
     print(request.form['llave2'])
     return 'lili'
+
+###########################################################
+@app.route('/redirectUser', methods=['POST','GET'])
+def redirectUser():
+    #Se retorna el redirect para que redireccione.
+    #A url_for se le pasa (nombreDeFuncion, parametros) <- Aqui se llama a la funcion postMethods y se le pasa el param post_id
+    return redirect(url_for('postMethods',post_id=2))
+    
