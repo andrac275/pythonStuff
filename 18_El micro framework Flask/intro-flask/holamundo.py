@@ -106,3 +106,12 @@ def renderizarTemplates():
 
 ###########################################################
 #Respoindiendo con JSON
+#Esto sigue a lo anterior pero con JSON ahora...
+#Lo que se hace es devolver un diccionario en el return
+@app.route('/devolverJSON', methods=['POST','GET'])
+def devolverJSON():
+    #Los archivos JSON son amigables para el tema de APIs
+    return {
+        "username" : "andrac",
+        "email" : "andrac@andrac.com"
+    }
