@@ -115,3 +115,19 @@ def devolverJSON():
         "username" : "andrac",
         "email" : "andrac@andrac.com"
     }
+
+###########################################################
+#Extendiendo plantillas
+@app.route('/home', methods=['GET'])
+def home():
+    #se pueden pasar variables tambien a un render template y des del ficher html llamarlas.
+    return render_template('home.html', mensaje="Hola mundo")
+    #Esta seccion trabaja con base.html y home.html... Lo que se hace en la base.html es dar una base a la plantilla que despues se reutiliza
+    #en home.html, esto sirve para reutilizar plantillas que sepamos que se van a utilizar en varios sitios por su estructura.
+
+###########################################################
+#Mostrando datos desde la base de datos
+
+
+###########################################################
+#Ingresando registros a la base de datos

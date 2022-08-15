@@ -1,0 +1,12 @@
+<!doctype html>
+<title>{% block title %}{% endblock %}</title>
+<!--Este static que hay en url_for es el nombre de la carpeta donde se guardaran los archivos css-->
+<link rel="stylesheet" href="{{ url_for('static' , filename='style.css') }}">
+<body>
+    <nav>
+        <h1>Titulo</h1>
+    </nav>
+    <section class="content">
+        {% block content %}{% endblock %}
+    </section>
+</body>
