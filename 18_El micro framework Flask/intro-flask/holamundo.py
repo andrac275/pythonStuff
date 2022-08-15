@@ -143,8 +143,20 @@ def home():
 def dataBase():
     cursor.execute('select * from Usuario')
     resultado = cursor.fetchall()
-    print(resultado)
+    # print(resultado)
     return render_template('users.html', usuarios = resultado)
 
 ###########################################################
 #Ingresando registros a la base de datos
+@app.route('/crear', methods=['POST','GET'])
+def crear():
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        edad = request.form['edad']
+        print(username, email,edad)
+        sql = "insert into Usuario (username,email,edad) values (%s,%s,%s)"
+        values = (username, email, edad)
+        cursor.execute(sql, values)
+        miDb.commit()
+    return render_template('crear.html')
