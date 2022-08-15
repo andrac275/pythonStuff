@@ -3,6 +3,18 @@ from flask import Flask, request, url_for,redirect,abort,render_template
     #en este caso holamundo.py
 app = Flask(__name__)
 
+#Importar la base de datos
+import privateData
+import mysql.connector
+miDb=mysql.connector.connect(
+    host="localhost",
+    user=privateData.dBUser,
+    password=privateData.dBPass,
+    database="prueba"
+)
+
+cursor = miDb.cursor(dictionary=True)
+
 #Usar decoradores con la arroba...
     #El codigo que hay después se va a ejecutar cuando llamemos a la raiz /, segun este ejemplo.
     #La raiz es: http://127.0.0.1:5000
@@ -127,7 +139,12 @@ def home():
 
 ###########################################################
 #Mostrando datos desde la base de datos
-
+@app.route('/dataBase', methods=['POST','GET'])
+def dataBase():
+    cursor.execute('select * from Usuario')
+    resultado = cursor.fetchall()
+    print(resultado)
+    return render_template('users.html', usuarios = resultado)
 
 ###########################################################
 #Ingresando registros a la base de datos
