@@ -15,6 +15,9 @@ Ya estamos en el espacio virtual, asi que ahora podemos instalar Flask.
 Para instalar flask, estando en el espacio virtual ()se sabe porque pone '(venv)' en la consola)...
 	pip install Flask
 
+Opcionalmente, podremos instalar el connector mysql para python...
+	pip3 install mysql-connector-python
+
 ##############
 Ya esta instalado... ahora en una consola donde vayamos a ejecutar cosas se activa el espacio virtual (como antes) y ya podemos trabajar:
 	. venv/Scripts/activate
