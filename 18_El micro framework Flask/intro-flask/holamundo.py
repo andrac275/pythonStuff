@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for,redirect
+from flask import Flask, request, url_for,redirect,abort
 #el valor de __name__ lo que hace es poner el nombre del archivo cuando lo ejecutamos
     #en este caso holamundo.py
 app = Flask(__name__)
@@ -81,5 +81,15 @@ def lili():
 def redirectUser():
     #Se retorna el redirect para que redireccione.
     #A url_for se le pasa (nombreDeFuncion, parametros) <- Aqui se llama a la funcion postMethods y se le pasa el param post_id
+    #Esto lo que hace es que cuando se acceda a la url http://localhost:5000/redirectUser, te redireccione a postMethods
     return redirect(url_for('postMethods',post_id=2))
-    
+
+###########################################################
+@app.route('/errorAbort', methods=['POST','GET'])
+def errorAbort():
+    #Se puede usar la funcion abort para mostrar al usuario un error en concreto, se puede capturar dicho
+        #error y asi despues redirigir al usuario a una pagina que nosotros decidamos y sea mas elegante que un error sin mas
+    #PEj los siguientes errores...
+    #abort(401)
+    abort(403)
+
