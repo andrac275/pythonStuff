@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, url_for
 #el valor de __name__ lo que hace es poner el nombre del archivo cuando lo ejecutamos
     #en este caso holamundo.py
 app = Flask(__name__)
@@ -61,3 +61,17 @@ def lele():
     print(request.form['llave1'])
     print(request.form['llave2'])
     return 'lele'
+
+###########################################################
+#Se pueden crear urls para redirigir al usuario, se hace con la libreria url_for
+#PEj se puede redirigir a una pagina si se hace el login bien o a otra que diga "login incorrecto" si se hace mal
+
+#Llamar con: curl -d "llave1=dato1&llave2=dato2" -X POST http://localhost:5000/lili
+@app.route('/lili', methods=['POST'])
+def lili():
+    #A url_for se le pasa (nombreDeFuncion, parametros) <- Aqui se llama a la funcion postMethods y se le pasa el param post_id
+    print(url_for('postMethods',post_id=2))
+    print(request.form)
+    print(request.form['llave1'])
+    print(request.form['llave2'])
+    return 'lili'
