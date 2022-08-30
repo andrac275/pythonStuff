@@ -51,3 +51,29 @@ def register():
         flash(error)
     #Este return por si el usuario esta haciendo un GET en lugar de un POST
     return render_template('auth/register.html')
+
+@bp.route('/login', methods=['GET','POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        db,c = get_db()
+        error = None
+        c.execute(
+            'select * from user where username = %s', (username,)
+        )
+        user = c.fetchone()
+
+        if user is None:
+            error = 'Usuario y/o contraseña invalido'
+        elif not check_password_hash(user['password'], password):
+            error = 'Usuario y/o contraseña invalido'
+
+        if error is None:
+            session.clear()
+            session['user_id']=user['id']
+            return redirect(url_for('index'))
+        
+        flash(error)
+    
+    return render_template('auth/login.html')
