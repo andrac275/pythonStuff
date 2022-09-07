@@ -72,7 +72,7 @@ def login():
         if error is None:
             session.clear()
             session['user_id']=user['id']
-            return redirect(url_for('index'))
+            return redirect(url_for('todo.index'))
         
         flash(error)
     
@@ -89,7 +89,7 @@ def load_logged_in_user():
         c.execute(
             'select * from user where id = %s',(user_id,)
         )
-        g.user = c.fechhome()
+        g.user = c.fetchone()
 
 def login_required(view):
     @functools.wraps(view)
