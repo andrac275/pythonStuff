@@ -22,4 +22,27 @@ btn.pack()
 l=Label(root,text="Nombre: ")
 l.pack()
 
+##Labels pasando variables
+def clickVariable():
+    texto = "Nombre label con variable: "+ e.get() #e.get() OBTENER el TEXTO de la etiqueta Entry 'e' y lo guarda en texto, en este caso
+        ##guardaria dentro "Nombre: LoQueHayaEnElEntry"
+    
+    textVariableee.set(texto) #Se ha hecho un set del contenido en la variable
+
+    aux= textVariableee.get() #El valor se puede guardar en otras variables para trabajar despues con el mismo
+    print("Valor despues del set: " , aux)
+
+    e.delete(0,END) #delete BORRA el CONTENIDO del Entry 'e' en este caso des de la posicion 0, que es el inicio, al final END
+
+btn = Button(root, text="click etiqueta con variable", command=clickVariable)
+btn.pack()
+
+
+textVariableee = StringVar() #Esto es la etiqueta para la variable
+
+lVariable=Label(root,textvariable = textVariableee) #Se asigna en textvariable y se actualiza en el set de la funcion
+    #"clickVariable" en el  'textVariableee.set(COSA)'
+
+lVariable.pack()
+
 root.mainloop()
