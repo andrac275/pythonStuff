@@ -21,6 +21,14 @@ c.execute("""
 """)
 conn.commit()
 
+def remove(id):
+    def _remove():
+        c.execute("DELETE FROM todo WHERE id = ?",(id,))
+        conn.commit()
+        render_todos()
+    
+    return _remove
+
 #Currying: es crear una funcion dentro de una funcion para retrasar la ejecucion de la misma
 # Esto guarda el valor del id y devuelve el valor actual y no el ultimo valor del id, que es el
 # que se iteraba en el bucle for que llama a complete  
@@ -36,7 +44,10 @@ def complete(id):
 
 def render_todos():
     rows = c.execute("SELECT * FROM todo").fetchall()
-    print(rows)
+
+    #Este for por cada elemento que haya, va a eliminarlos. Es para al borrar algo, se borre de la UI
+    for widget in frame.winfo_children():
+        widget.destroy()
 
     for i in range(0, len(rows)):
         id = rows[i][0]
@@ -45,6 +56,8 @@ def render_todos():
         color = '#555555' if completed else '#000000'
         l=Checkbutton(frame, text = description, fg = color, width = 42, anchor='w', command = complete(id))
         l.grid(row=i, column = 0, sticky = 'w')
+        btn=Button(frame,text="Eliminar",command=remove(id))
+        btn.grid(row=i, column=1)
         l.select() if completed else l.deselect()
 
 def addTodo():
