@@ -28,7 +28,10 @@ def complete(id):
     #Por convenio se genera el mismo nombre de funcion que la externa pero con una barra baja para 
     #diferenciar una de la otra y si sale algun error, saber cual de las dos es.
     def _complete():
-        print(id)
+        todo = c.execute("SELECT * FROM todo WHERE ID = ?",(id,)).fetchone()
+        c.execute("UPDATE todo SET completed = ? WHERE id = ?",(not todo[3], id))
+        conn.commit()
+        render_todos()
     return _complete
 
 def render_todos():
@@ -39,8 +42,10 @@ def render_todos():
         id = rows[i][0]
         completed = rows[i][3] #La cuarta columna (el 3) pone 0 o  1 para saber si está o no está completado
         description = rows[i][2]
-        l=Checkbutton(frame, text = description, width = 42, anchor='w', command = complete(id))
+        color = '#555555' if completed else '#000000'
+        l=Checkbutton(frame, text = description, fg = color, width = 42, anchor='w', command = complete(id))
         l.grid(row=i, column = 0, sticky = 'w')
+        l.select() if completed else l.deselect()
 
 def addTodo():
     todo = e.get()
