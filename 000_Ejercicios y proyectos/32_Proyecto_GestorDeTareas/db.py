@@ -21,13 +21,27 @@ c.execute("""
 """)
 conn.commit()
 
+def render_todos():
+    rows = c.execute("SELECT * FROM todo").fetchall()
+    print(rows)
+
+    for i in range(0, len(rows)):
+        completed = rows[i][3] #La cuarta columna (el 3) pone 0 o  1 para saber si está o no está completado
+        description = rows[i][2]
+        l=Checkbutton(frame, text = description, width = 42, anchor='w')
+        l.grid(row=i, column = 0, sticky = 'w')
+
 def addTodo():
     todo = e.get()
-    c.execute("""
-        INSERT INTO todo (description, completed) VALUES (?,?)
-    """, (todo, False))
-    conn.commit()
-    e.delete(0,END)
+    if todo:
+        c.execute("""
+            INSERT INTO todo (description, completed) VALUES (?,?)
+        """, (todo, False))
+        conn.commit()
+        e.delete(0,END)
+        render_todos()
+    else:
+        pass
 
 l = Label(root, text="Tarea")
 l.grid(row=0,column=0)
@@ -44,5 +58,7 @@ frame.grid(row=1,column=0, columnspan=3, sticky="nswe",padx=5)
 e.focus()
 
 root.bind('<Return>',lambda x : addTodo())
+
+render_todos()
 
 root.mainloop()
