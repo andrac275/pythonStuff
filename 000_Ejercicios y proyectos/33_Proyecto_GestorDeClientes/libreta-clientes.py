@@ -19,9 +19,30 @@ c.execute("""
         );
 """)
 
+def insertar(cliente):
+    print(cliente)
+
 def nuevo_cliente():
     def guardar():
-        pass
+        if not nombre.get():
+            messagebox.showerror('Error','El nombre es obligatorio')
+            return
+        if not telefono.get():
+            messagebox.showerror('Error','El telefono es obligatorio')
+            return
+        if not empresa.get():
+            messagebox.showerror('Error','La empresa es obligatoria')
+            return        
+
+        cliente = {
+            'nombre' :nombre.get(),
+            'telefono' :telefono.get(),
+            'empresa' :empresa.get()
+        }
+        insertar(cliente)
+        top.destroy()
+        
+
 
     top = Toplevel()
     top.title('Nuevo cliente')
