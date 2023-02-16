@@ -22,6 +22,9 @@ c.execute("""
 def render_clientes():
     rows= c.execute("SELECT * FROM cliente").fetchall()
 
+    #Borra lo anterior antes de renderizar al nuevo cliente o de borrar al cliente. Para que no de problemas de id
+    tree.delete(*tree.get_children())
+
     for row in rows:
         tree.insert('',END,row[0],values=(row[1],row[2],row[3]))
         
@@ -53,8 +56,6 @@ def nuevo_cliente():
         insertar(cliente)
         top.destroy()
         
-
-
     top = Toplevel()
     top.title('Nuevo cliente')
 
@@ -79,7 +80,18 @@ def nuevo_cliente():
     top.mainloop()
 
 def eliminar_cliente():
-    pass
+    #selection es para saber que elemento o elementos estan seleecionados
+    id= tree.selection()[0] #Obtiene el elemento 0 de la tupla, solo borrara un elemento
+
+    cliente=c.execute("SELECT * FROM cliente WHERE id=?",(id,)).fetchone()
+    respuesta = messagebox.askokcancel("Seguro?","Estás seguro de querer eliminar el cliente "+cliente[1]+"?")
+    if respuesta:    
+        c.execute("DELETE FROM cliente WHERE id = ?",(id,))
+        conn.commit()
+        render_clientes()
+    else:
+        pass
+    
 
 btn = Button(root, text='Nuevo Cliente', command=nuevo_cliente)
 btn.grid(column=0,row=0)
