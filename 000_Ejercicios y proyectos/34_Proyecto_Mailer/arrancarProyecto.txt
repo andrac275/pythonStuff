@@ -9,3 +9,10 @@ hacer cositas
 
 instalar en algun momento en la carpeta 34_proyectomailer
     "pip3 install python-dotenv" <- Esto sirve para que python pueda usar archivos .env para las variabels de entrono
+
+
+Poner modo desarrollo:
+    export FLASK_DEBUG=True
+
+Ejecutar proyecto:
+    flask run
