@@ -5,7 +5,7 @@ from flask import Flask
 def create_app():
     app = Flask(__name__)
 
-    app.config.from_maping(
+    app.config.from_mapping(
         #Sendgrid es un servicio gratuiro de envio de mails, para probar esto, sobra.
         SENDGRID_KEY=os.environ.get('SENDGRID_API_KEY'),
         SECRET_KEY=os.environ.get('SECRET_KEY'),
