@@ -3,6 +3,8 @@ entrar a la carpeta de 34_proyecto-mailer des de la consola
 ejecutar:
     .\venv\Scripts\activate
     (Aparecera 'venv' en la consola entre parentesi)
+    en el bash poner:
+    . .\venv\Scripts\activate
 
 hacer cositas
 
