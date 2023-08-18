@@ -1,0 +1,84 @@
+Este txt corresponde al video 244_Desplegando aplicacion en la nube.
+Aqui voy a poner comentarios, comandos y cosas varias que dice en el video:
+-------------------------
+
+En el video se usa "Heroku" para el despliegue. Para cosas simples sobra y resobra,
+si hiciera falta en el futuro se podria usar AWS si creciera mucho (por ejemplo).
+https://www.heroku.com/
+
+Registrarse en Heroku en el link anterior. El proyecto lo instalaremos des de linea de comandos, asi que para
+ello hay que bajarse la CLI de Heroku.
+https://devcenter.heroku.com/articles/heroku-cli
+
+Vale... Ya esta todo instalado en este punto si miras el video, continuamos.
+
+--------------------------
+Ir a la carpeta del proyecto en la terminal: '000_Ejercicios y proyectos\34_Proyecto_Mailer'
+Aqui se ejecutan los comandos.
+Nota: Deberia crear .gitignore en la raiz y añadir cosas, pero como esto ya esta en un proyecto de git y no 
+lo hice en su dia... creo que ya no se puede, porque ya tiene en cuenta todo.
+Esto es para no incluirlos en la nube de Heroku porque se generan de manera automatica.
+En el -gitignore poner lo siguiente:
+######Contenido .gitIgnore######
+venv/
+.env
+
+*.pyc
+__pycache__/
+
+instance/
+###### Fin Contenido .gitIgnore######
+git init
+git add .
+git commit -m 'Commit inicial xDDDD Vale no'
+
+heroku create
+    Devuelve por consola un link de navegador de la app, que si lo copias, se ve en el navegador.
+    Devuelve un link de git al que hay que pushear la app, supongamos que es: https://git.heroku.com/appAndrac (por ejemplo)
+
+#Crear la base de datos para que vaya nuestra app.
+heroku addons:create cleardb:ignite     #ignite es una base de datosMysql muy pequeña gratuita
+    Dice que te crea una base de datos y tiene una variable de entorno CLEARDB_DATABASE_URL
+
+heroku config   #Comando para ver las variables  de entorno.
+    La url de la variable de entonrno, tiene mucha info, tiene un usuario, una password, un host y una base de datos
+    todo separado: mysql://usuario:pass@host/database?reconnect=true
+
+Estos datos hay que setearlos en las variables de entonrno
+heroku config:set FLASK_DATABASE_USER=usuario
+heroku config:set FLASK_DATABASE=database
+heroku config:set FLASK_DATABASE_PASSWORD=pass
+heroku config:set FLASK_DATABASE_HOST=host
+
+heroku config:set FROM_EMAIL=micorreo@asdf.com
+heroku config:set SENGRID_API_KEY=PonerLaApiDelArchivoPuntoenv
+
+heroku config   #Para asegurarme que todas las variables se han puesto correctamente.
+
+----
+#Paquete para levantar la app y que se quede escuchando.
+    pip3 install gunicorn
+#Generar archivo con las dependencias de la aplicacion
+    pip3 freeze > requirements.txt
+#Crear y guardar contenido en fichero 'Procfile' es un script que inicializa
+    echo "web: flask init-db; gunicorn app:'create_app()'" > Procfile
+
+#Mas variables de entorno
+heroku config:set FLASK_APP=app
+heroku config:set SECRET_KEY='miLlaveSecretaAasdfasdf'  #String unico... pues por ejemplo eso que he puesto.
+
+git add .
+
+git commit -m "archivo Procfile y requirements.txt"
+
+git push heroku main
+
+#Apareceran cosas en consola.
+Lo que hace Heroku es descargar todo lo del repo que acabamos de pushear, y empieza a consturir la aplicacion.
+Instala las dependencias de la app, instala mysqlconnector, instala sendgrid y todo lo demas que haga falta
+
+#Comprobar que la app funciona
+heroku open     #Este comando abre una pestaña con la app.
+
+
+
